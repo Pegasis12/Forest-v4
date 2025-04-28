@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <link rel="icon" href="./favicon.png" type="image/png" />
+    <title>Forest</title>
+  </head>
+  <body class="bg-verde-800 font-sans mb-96">
+    <div class="container mt-4 flex justify-center md:justify-start">
+      <div class="inline-flex items-center rounded-md bg-verde-900">
+        <span
+          class="block size-2 rounded-full bg-verde-300 shadow shadow-verde-200 relative -left-1"
+        ></span>
+        <div class="flex text-verde-300 divide-x-2 divide-verde-800">
+          <div class="px-4 py-2 capitalize" id="dia">Segunda</div>
+          <div class="px-4 py-2" id="temperatura">25º</div>
+          <div class="px-4 py-2" id="tempo">☀️</div>
+        </div>
+      </div>
+    </div>
+
+    <header class="container flex justify-between items-center gap-8 py-8">
+      <a href="./"
+        ><img src="./img/forest.svg" alt="forest-logo" width="138" height="35"
+      /></a>
+
+      <nav>
+        <ul class="flex flex-wrap gap-8 text-white text-xl">
+          <li>
+            <a
+              class="hover:underline hover:underline-offset-8"
+              href="#acomodacoes"
+              >Acomodações</a
+            >
+          </li>
+          <li>
+            <a class="hover:underline hover:underline-offset-8" href="#eventos"
+              >Eventos</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:underline hover:underline-offset-8"
+              href="#experiencias"
+              >Experiências</a
+            >
+          </li>
+          <li>
+            <a class="hover:underline hover:underline-offset-8" href="#contato"
+              >Contato</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="text-white pt-64 px-8 pb-8 relative">
+        <!-- size full cresce o maximo que pode masdistorce, por isso usa cover-->
+         <!-- inset-0 aplica 0 para todos os lados -->
+        <img class="absolute inset-0 size-full object-cover -z-10" src="./img/floresta.jpg" alt="">
+        <div class="bg-verde-950 inline-flex gap-8 items-center py-1 pr-1 pl-4 rounded-full">
+          vagas para dezembro abertas
+          <a class="bg-verde-400 text-verde-900 py-2 px-4 inline-block rounded-full" href=""
+          >Reserve Hoje</a></div>
+      </div>
+    </main>
+  </body>
+</html>
