@@ -58,7 +58,9 @@
 
     <main class="container">
       <!-- a imagem vaza com rounded, pra n deixar vazar se usa o overflow-hidden -->
-      <div class="text-white bg-gradient-to-t from-verde-950/80 pt-12 sm:pt-64 px-4 sm:px-8 pb-8 relative rounded-2xl overflow-hidden">
+      <div
+        class="text-white bg-gradient-to-t from-verde-950/80 pt-12 sm:pt-64 px-4 sm:px-8 pb-8 relative rounded-2xl overflow-hidden"
+      >
         <!-- size full cresce o maximo que pode porem distorce, por isso usa object-cover-->
         <!-- inset-0 aplica 0 para todos os lados top, left, richt etc, cubrindo tudo-->
         <img
@@ -76,7 +78,9 @@
             >Reserve Hoje</a
           >
         </div>
-        <h1 class="mb-8 sm:mb-20 font-serif text-4xl sm:text-5xl max-w-screen-sm text-balance">
+        <h1
+          class="mb-8 sm:mb-20 font-serif text-4xl sm:text-5xl max-w-screen-sm text-balance"
+        >
           Venha Experimentar a Vida na Floresta
         </h1>
         <div class="sm:flex justify-between items-end text-sm">
@@ -102,5 +106,76 @@
         </div>
       </div>
     </main>
+
+    <!-- acomodacoes -->
+    <section
+      id="acomodacoes"
+      class="container grid lg:grid-cols-[2fr_3fr] gap-8 pt-16 mb-12 sm:mb-16"
+    >
+     <!-- alinhando o conteudo da grid do texto no final com content-end -->
+      <div
+        class="content-end bg-[url('./img/padrao.svg')] bg-no-repeat bg-contain bg-left-bottom"
+      >
+        <h2 class="text-white mb-8 text-4xl font-serif lg:text-5xl">
+          Refúgio Natural
+        </h2>
+        <!-- poderia ter feito o space entre as li sem o grid e o gap, usando o space-y-4 -->
+        <ul
+          class="text-gray-200 *:flex *:items-center *:gap-4 grid gap-4 sm:text-xl"
+        >
+          <li>
+            <span class="h-0.5 w-6 bg-verde-400 inline-block"></span>Experimente
+            a natureza de perto
+          </li>
+          <li>
+            <span class="h-0.5 w-6 bg-verde-400 inline-block"></span>Conecte-se
+            com a natureza
+          </li>
+          <li>
+            <span class="h-0.5 w-6 bg-verde-400 inline-block"></span
+            >Desconecte-se do digital
+          </li>
+          <li>
+            <span class="h-0.5 w-6 bg-verde-400 inline-block"></span>Observe a
+            vida selvagem
+          </li>
+          <li>
+            <span class="h-0.5 w-6 bg-verde-400 inline-block"></span>Escolha a
+            sua cabine preferida
+          </li>
+        </ul>
+      </div>
+      <div class="grid grid-cols-[2fr_1fr] gap-4 sm:gap-8">
+        <!-- o col-span-full faz a div se expandir ao maximo de todas as colunas criadas -->
+         <!-- usando grid para colocar o nome por cima da imagem: inicia todos os elementos na mesma linha e coluna e posiciona o nome para iniciar da forma que quer cm self-->
+        <div class="col-span-full grid *:col-start-1 *:row-start-1">
+          <!-- limitando a imagem a h-52 para ncrescer tanto de altura, colocando o w-full para ele crescer ao maximo do container e object-cover para n distorcer -->
+          <img
+            class="h-52 w-full object-cover rounded-xl"
+            src="./img/casa1.jpg"
+            alt="casa1"
+          />
+          <!-- posiciona o elemento self pq é um filho, no self-start linha e na coluna justify-self-end e m-2 para da uma margenzinha-->
+          <span class="uppercase text-white rounded-full bg-verde-950/60 px-4 py-2 text-sm/none self-start justify-self-end m-2">Ruby</span>
+        </div>
+        <div class="grid *:col-start-1 *:row-start-1">
+          <!-- size full ao invez de w-full igual a casa 1 pois size cresce para todos os lados -->
+          <img
+            class="size-full object-cover rounded-xl"
+            src="./img/casa2.jpg"
+            alt="casa2"
+          />
+          <span class="uppercase text-white rounded-full bg-verde-950/60 px-4 py-2 text-sm/none self-start justify-self-end m-2">Emerald</span>
+        </div>
+        <div class="grid *:col-start-1 *:row-start-1">
+          <img
+            class="size-full object-cover rounded-xl"
+            src="./img/casa3.jpg"
+            alt="casa3"
+          />
+          <span class="uppercase text-white rounded-full bg-verde-950/60 px-4 py-2 text-sm/none self-start justify-self-end m-2">saphire</span>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
