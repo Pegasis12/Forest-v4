@@ -7,7 +7,7 @@
     <link rel="icon" href="./favicon.png" type="image/png" />
     <title>Forest</title>
   </head>
-  <body class="bg-verde-800 font-sans mb-96">
+  <body class="bg-verde-800 font-sans">
     <div class="container mt-4 flex justify-center md:justify-start">
       <div class="inline-flex items-center rounded-md bg-verde-900">
         <span
@@ -419,7 +419,10 @@
     </section>
 
     <!-- contato -->
-    <section id="contato" class="container mb-12 sm:mb-16 grid lg:grid-cols-2">
+    <section
+      id="contato"
+      class="container mb-12 sm:mb-16 grid lg:grid-cols-2 gap-8"
+    >
       <div>
         <h1 class="font-serif text-4xl text-verde-300 mb-4">Nossos Contatos</h1>
         <p class="text-gray-200 text-balance mb-8">
@@ -451,56 +454,107 @@
       </div>
 
       <form
-        class="grid gap-4 rounded-lg bg-verde-900 shadow-2xl p-4 lg-p-8"
+        class="grid gap-4 rounded-xl bg-verde-900 shadow-2xl p-4 lg:p-8"
         action=""
       >
         <!-- colocando grid e gap-1 o label ja pega de ponta a ponta e o input tbm, ficando em uma so coluna -->
         <div class="grid gap-1">
           <label class="text-white" for="nome">Nome</label>
           <input
+            id="nome"
+            name="nome"
             class="rounded-md border-2 border-verde-800 bg-verde-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900"
             type="text"
-            name="name"
           />
         </div>
 
         <div class="grid gap-4 sm:grid-cols-2">
           <div class="grid gap-1">
-            <label class="text-white" for="nome">Email</label>
+            <label class="text-white" for="email">Email</label>
             <input
-              class="rounded-md border-2 border-verde-800 bg-verde-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900"
               id="email"
-              for="email"
-              type="email"
               name="email"
+              class="rounded-md border-2 border-verde-800 bg-verde-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900"
+              type="email"
             />
           </div>
 
           <div class="grid gap-1">
-            <label class="text-white" for="nome">Telefone</label>
+            <label class="text-white" for="telefone">Telefone</label>
             <input
-              class="rounded-md border-2 border-verde-800 bg-verde-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900"
               id="telefone"
-              for="telefone"
-              type="number"
-              name="numero"
-              placeholder="(31)0000-0000"
-            />
-          </div>
-
-          <div class="grid gap-1">
-            <label class="text-white" for="nome">Telefone</label>
-            <input
+              name="telefone"
               class="rounded-md border-2 border-verde-800 bg-verde-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900"
-              id="telefone"
-              for="telefone"
-              type="number"
-              name="numero"
-              placeholder="(31)0000-0000"
+              placeholder="(21) 00000-0000"
+              type="text"
             />
           </div>
         </div>
+        <div class="grid gap-1">
+          <label class="text-white" for="mensagem">Mensagem</label>
+          <textarea
+            id="mensagem"
+            name="mensagem"
+            rows="5"
+            class="rounded-md border-2 border-verde-800 bg-verde-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900 resize-none"
+            type="text"
+          ></textarea>
+        </div>
+        <button
+          class="place-self-start bg-verde-400 text-verde-900 py-2 px-4 inline-block rounded-full"
+        >
+          Enviar E-mail
+        </button>
       </form>
     </section>
+
+    <!-- parceiros -->
+    <section class="container mb-12 sm:mb-16">
+      <!-- *:*: o filho direto da ul e o filho direto da li que é a img -->
+      <ul
+        class="*:*:max-h-8 flex flex-col sm:flex-row sm:gap-8 sm:border-y-2 sm:border-verde-900 items-center py-4 sm:py-8 max-sm:divide-y-2 divide-verde-900 *:p-4"
+      >
+        <li><img src="./img/parceiros/caravan.svg" alt="Caravan" /></li>
+        <li><img src="./img/parceiros/dogs.svg" alt="Dogs" /></li>
+        <li><img src="./img/parceiros/wildbeast.svg" alt="Wildbeast" /></li>
+        <li><img src="./img/parceiros/lescone.svg" alt="Lescone" /></li>
+        <li><img src="./img/parceiros/surfbot.svg" alt="Surfbot" /></li>
+      </ul>
+    </section>
+
+    <!-- footer -->
+    <footer class="container pb-8">
+      <div class="bg-verde-900 rounded-2xl p-6 sm:p-12 mb-8 grid gap-8 lg:grid-cols-2">
+        <div class="flex gap-12 max-sm:flex-col max-sm:gap-4">
+          <div>
+            <h3 class="text-white font-serif text-xl mb-4">Endereço</h3>
+            <p class="text-gray-400">Rua da Mata, 123<br>
+              Floresta Nacional<br>
+              Rio de Janeiro, RJ</p>
+          </div>
+
+          <div>
+            <h3 class="text-white font-serif text-xl mb-4">Contato</h3>
+            <p class="text-gray-400">contato@forest.com<br>
+              +55 21 9999-9999</p>
+          </div>
+        </div>
+        <div class="lg:justify-self-end">
+          <img class="mb-4" src="./img/forest.svg" alt="forest">
+          <p class="text-gray-400">Conecte-se com a natureza</p>
+        </div>
+      </div>
+      <!-- flex col reverse inverter e as redes vim primeiro -->
+      <div
+        class="text-gray-400 flex items-center justify-between gap-8 text-sm max-sm:flex-col-reverse"
+      >
+        <p>© 2024 Forest. Todos os direitos reservados.</p>
+        <ul class="flex gap-8">
+          <li><a href="#" class="hover:text-verde-300">Instagram</a></li>
+          <li><a href="#" class="hover:text-verde-300">Linkedin</a></li>
+          <li><a href="#" class="hover:text-verde-300">Facebook</a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
