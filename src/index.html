@@ -27,34 +27,44 @@
       /></a>
 
       <!-- z-40 pq ainda vem o menu que vai por cima do nav, alem disso colocamos o z pois o backdrop fica abaxio dos elementos cm position absolute, sendo necessario colocar z-index -->
-      <nav class="lg:block z-40 max-lg:fixed max-lg:w-full max-lg:inset-0">
+      <nav
+        class="hidden lg:block z-40 max-lg:fixed max-lg:w-full max-lg:inset-0 items-center"
+        id="mobile-menu"
+      >
         <!-- backdrop que aparece aco licar no menu-h, lembrando do inset 0 que coloca zero em todos os lados ocupando todo espaco, no caso em questão da 0 para tela toda ja que é fixed, backdrop-blur-md da uma borrada-->
-         <div class="fixed inset-0 bg-verde-950/40 backdrop-blur-md">
+        <div
+          class="fixed inset-0 bg-verde-950/40 backdrop-blur-md lg:hidden"
+        ></div>
 
-         </div>
-
-        <ul class="flex flex-wrap gap-8 text-white text-xl z-50 absolute">
-          <li>
+        <ul
+          class="lg:flex text-2xl lg:flex-wrap lg:gap-8 text-white lg:text-xl max-lg:z-50 max-lg:absolute max-lg:divide-y-2 max-lg:divide-white/10 max-lg:p-8 max-lg:w-full"
+        >
+        <!-- na animacao ja tem opacity 0 porem é bom indicar o estado inicial do elemento -->
+          <li class="animate-slide-in opacity-0 animate-1">
             <a
-              class="hover:underline hover:underline-offset-8"
+              class="lg:hover:underline lg:hover:underline-offset-8 p-4 block max-lg:hover:bg-white/10 lg:px-0 lg:py-2"
               href="#acomodacoes"
               >Acomodações</a
             >
           </li>
-          <li>
-            <a class="hover:underline hover:underline-offset-8" href="#eventos"
+          <li class="animate-slide-in opacity-0 animate-2">
+            <a
+              class="lg:hover:underline lg:hover:underline-offset-8 p-4 block max-lg:hover:bg-white/10 lg:px-0 lg:py-2"
+              href="#eventos"
               >Eventos</a
             >
           </li>
-          <li>
+          <li class="animate-slide-in opacity-0 animate-3">
             <a
-              class="hover:underline hover:underline-offset-8"
+              class="lg:hover:underline lg:hover:underline-offset-8 p-4 block max-lg:hover:bg-white/10 lg:px-0 lg:py-2"
               href="#experiencias"
               >Experiências</a
             >
           </li>
-          <li>
-            <a class="hover:underline hover:underline-offset-8" href="#contato"
+          <li class="animate-slide-in opacity-0 animate-4">
+            <a
+              class="lg:hover:underline lg:hover:underline-offset-8 p-4 block max-lg:hover:bg-white/10 lg:px-0 lg:py-2"
+              href="#contato"
               >Contato</a
             >
           </li>
@@ -62,11 +72,14 @@
       </nav>
       <!-- botao de acionamento menumobile -->
       <button
+        id="mobile-button"
         class="bg-verde-400 text-verde-900 py-2 px-4 rounded-full flex items-center gap-3 lg:hidden"
       >
         Menu
         <!-- menu hamburguer feito cm twsem precisar de svg -->
-        <span class="h-3 w-4 flex flex-col justify-between *:h-0.5 *:rounded-md *:bg-verde-800">
+        <span
+          class="h-3 w-4 flex flex-col justify-between *:h-0.5 *:rounded-md *:bg-verde-800"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -580,5 +593,20 @@
         </ul>
       </div>
     </footer>
+    <script>
+      const mobileButton = document.getElementById('mobile-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      mobileButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+      });
+
+      mobileMenu.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+      });
+
+    </script>
   </body>
 </html>
