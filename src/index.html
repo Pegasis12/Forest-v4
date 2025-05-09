@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<!-- scroll-smooth é uma classe para scroll suave, lembrando q n funciona em todos os browser, valor ainda experimental -->
+<html lang="pt-BR" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="output.css" />
     <link rel="icon" href="./favicon.png" type="image/png" />
+    <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet">
     <title>Forest</title>
   </head>
   <body class="bg-verde-800 font-sans">
     <div class="container mt-4 flex justify-center md:justify-start">
       <div class="inline-flex items-center rounded-md bg-verde-900">
-        <span
-          class="block size-2 rounded-full bg-verde-300 shadow shadow-verde-200 relative -left-1"
-        ></span>
+        <span class="block size-2 relative -left-1 neon"></span>
         <div class="flex text-verde-300 divide-x-2 divide-verde-800">
           <div class="px-4 py-2 capitalize" id="dia">Segunda</div>
           <div class="px-4 py-2" id="temperatura">25º</div>
@@ -39,7 +42,7 @@
         <ul
           class="lg:flex text-2xl lg:flex-wrap lg:gap-8 text-white lg:text-xl max-lg:z-50 max-lg:absolute max-lg:divide-y-2 max-lg:divide-white/10 max-lg:p-8 max-lg:w-full"
         >
-        <!-- na animacao ja tem opacity 0 porem é bom indicar o estado inicial do elemento -->
+          <!-- na animacao ja tem opacity 0 porem é bom indicar o estado inicial do elemento -->
           <li class="animate-slide-in opacity-0 animate-1">
             <a
               class="lg:hover:underline lg:hover:underline-offset-8 p-4 block max-lg:hover:bg-white/10 lg:px-0 lg:py-2"
@@ -73,7 +76,7 @@
       <!-- botao de acionamento menumobile -->
       <button
         id="mobile-button"
-        class="bg-verde-400 text-verde-900 py-2 px-4 rounded-full flex items-center gap-3 lg:hidden"
+        class="flex items-center gap-3 lg:hidden btn py-1"
       >
         Menu
         <!-- menu hamburguer feito cm twsem precisar de svg -->
@@ -94,20 +97,36 @@
       >
         <!-- size full cresce o maximo que pode porem distorce, por isso usa object-cover-->
         <!-- inset-0 aplica 0 para todos os lados top, left, richt etc, cubrindo tudo-->
-        <img
+        <!-- <img
           class="absolute inset-0 size-full object-cover -z-10"
           src="./img/floresta.jpg"
           alt=""
-        />
+        /> -->
+
+        <!-- adicionamos somente video id pois o src vai ser dinamico via js -->
+        <!-- autoplay para repetir, muted comecar mutado, playsinline avisar o ios para n abrir o video full screen loop para ficar em loop  -->
+        <video
+          id="video"
+          class="absolute inset-0 size-full object-cover -z-10 animate-fade-in"
+          src="./img/video_chuva.mp4"
+          width="1280"
+          height="720"
+          autoplay
+          muted
+          playsinline
+          loop
+        ></video>
+
         <div
           class="bg-verde-950/60 sm:bg-verde-950 sm:inline-flex sm:gap-8 sm:items-center sm:py-1 sm:pr-1 sm:pl-4 rounded-xl sm:rounded-full mb-8 flex flex-col sm:flex-row items-start gap-2 p-4"
         >
           vagas para dezembro abertas
           <a
-            class="bg-verde-400 text-verde-900 py-2 px-4 inline-block rounded-full"
-            href=""
-            >Reserve Hoje</a
-          >
+            class="btn inline-flex items-center gap-2"
+            href="#contato"
+            >Reserve Hoje
+            <img src="./img/seta.svg" alt="">
+            </a>
         </div>
         <h1
           class="mb-8 sm:mb-20 font-serif text-4xl sm:text-5xl max-w-screen-sm text-balance"
@@ -141,7 +160,7 @@
     <!-- acomodacoes -->
     <section
       id="acomodacoes"
-      class="container grid lg:grid-cols-[2fr_3fr] gap-8 pt-16 mb-12 sm:mb-16"
+      class="radial-gradient container grid lg:grid-cols-[2fr_3fr] gap-8 pt-16 mb-12 sm:mb-16"
     >
       <!-- alinhando o conteudo da grid do texto no final com content-end -->
       <div
@@ -155,23 +174,23 @@
           class="text-gray-200 *:flex *:items-center *:gap-4 grid gap-4 sm:text-xl"
         >
           <li>
-            <span class="h-0.5 w-6 bg-verde-400 inline-block"></span>Experimente
+            <span class="h-0.5 w-6 neon inline-block"></span>Experimente
             a natureza de perto
           </li>
           <li>
-            <span class="h-0.5 w-6 bg-verde-400 inline-block"></span>Conecte-se
+            <span class="h-0.5 w-6 neon inline-block"></span>Conecte-se
             com a natureza
           </li>
           <li>
-            <span class="h-0.5 w-6 bg-verde-400 inline-block"></span
+            <span class="h-0.5 w-6 neon inline-block"></span
             >Desconecte-se do digital
           </li>
           <li>
-            <span class="h-0.5 w-6 bg-verde-400 inline-block"></span>Observe a
+            <span class="h-0.5 w-6 neon inline-block"></span>Observe a
             vida selvagem
           </li>
           <li>
-            <span class="h-0.5 w-6 bg-verde-400 inline-block"></span>Escolha a
+            <span class="h-0.5 w-6 neon inline-block"></span>Escolha a
             sua cabine preferida
           </li>
         </ul>
@@ -251,7 +270,7 @@
             </p>
             <a
               href="#contato"
-              class="justify-self-start self-end bg-verde-400 text-verde-900 py-2 px-4 inline-block rounded-full"
+              class="justify-self-start self-end btn"
               >Reservar 23/03</a
             >
           </div>
@@ -269,7 +288,7 @@
             </p>
             <a
               href="#contato"
-              class="justify-self-start self-end bg-verde-400 text-verde-900 py-2 px-4 inline-block rounded-full"
+              class="justify-self-start self-end btn"
               >Reservar 15/04</a
             >
           </div>
@@ -289,7 +308,7 @@
             </p>
             <a
               href="#contato"
-              class="justify-self-start self-end bg-verde-400 text-verde-900 py-2 px-4 inline-block rounded-full"
+              class="justify-self-start self-end btn"
               >Reservar 18/08</a
             >
           </div>
@@ -313,7 +332,7 @@
         </h2>
         <!-- usando before como exemplo, mas poderia ser um span, por padrão o transition normal n pega em width, por isso usa all pra pegar em tudo-->
         <h3
-          class="text-white text-xl flex items-center gap-4 before:h-0.5 before:w-6 before:bg-verde-400 hover:before:w-10 before:transition-[width]"
+          class="text-white text-xl flex items-center gap-4 before:h-0.5 before:w-6 before:neon hover:before:w-10 before:transition-[width]"
         >
           Observação Noturna
         </h3>
@@ -321,7 +340,7 @@
           Explore a vida selvagem em seu habitat natural sob as estrelas.
         </p>
         <h3
-          class="text-white text-xl flex items-center gap-4 before:h-0.5 before:w-6 before:bg-verde-400 hover:before:w-10 before:transition-[width]"
+          class="text-white text-xl flex items-center gap-4 before:h-0.5 before:w-6 before:neon hover:before:w-10 before:transition-[width]"
         >
           Vida Selvagem
         </h3>
@@ -329,7 +348,7 @@
           Observe a vida selvagem em seu habitat natural.
         </p>
         <h3
-          class="text-white text-xl flex items-center gap-4 before:h-0.5 before:w-6 before:bg-verde-400 hover:before:w-10 before:transition-[width]"
+          class="text-white text-xl flex items-center gap-4 before:h-0.5 before:w-6 before:neon hover:before:w-10 before:transition-[width]"
         >
           Canoagem
         </h3>
@@ -404,7 +423,7 @@
           class="grid flex-1 gap-4 bg-verde-900 p-6 sm:p-8 rounded-xl sm:hover:-translate-y-2 transition-transform"
         >
           <div
-            class="bg-verde-400 size-10 flex items-center justify-center rounded-full"
+            class="neon size-10 flex items-center justify-center"
           >
             <img src="./img/manha.svg" alt="" />
           </div>
@@ -420,7 +439,7 @@
           class="grid flex-1 gap-4 bg-verde-900 p-6 sm:p-8 rounded-xl sm:translate-y-12 sm:hover:translate-y-10 transition-transform"
         >
           <div
-            class="bg-verde-400 size-10 flex items-center justify-center rounded-full"
+            class="neon size-10 flex items-center justify-center"
           >
             <img src="./img/dia.svg" alt="" />
           </div>
@@ -436,7 +455,7 @@
           class="grid flex-1 gap-4 bg-verde-900 p-6 sm:p-8 rounded-xl sm:hover:-translate-y-2 transition-transform"
         >
           <div
-            class="bg-verde-400 size-10 flex items-center justify-center rounded-full"
+            class="neon size-10 flex items-center justify-center"
           >
             <img src="./img/noite.svg" alt="" />
           </div>
@@ -463,7 +482,7 @@
 
         <div class="grid gap-4">
           <div>
-            <span class="h-0.5 w-6 bg-verde-400 inline-block"></span>
+            <span class="h-0.5 w-6 neon inline-block"></span>
             <h2 class="mb-2 text-2xl text-verde-300 font-serif">Base</h2>
             <p class="text-gray-300">
               Rua da Mata, 123 - Floresta Nacional - RJ
@@ -471,13 +490,13 @@
           </div>
 
           <div>
-            <span class="h-0.5 w-6 bg-verde-400 inline-block"></span>
+            <span class="h-0.5 w-6 neon inline-block"></span>
             <h2 class="mb-2 text-2xl text-verde-300 font-serif">Email</h2>
             <p class="text-gray-300">contato@forest.com</p>
           </div>
 
           <div>
-            <span class="h-0.5 w-6 bg-verde-400 inline-block"></span>
+            <span class="h-0.5 w-6 neon inline-block"></span>
             <h2 class="mb-2 text-2xl text-verde-300 font-serif">Telefone</h2>
             <p class="text-gray-300">21 99999-9999</p>
           </div>
@@ -494,7 +513,7 @@
           <input
             id="nome"
             name="nome"
-            class="rounded-md border-2 border-verde-800 bg-verde-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900"
+            class="input"
             type="text"
           />
         </div>
@@ -505,7 +524,7 @@
             <input
               id="email"
               name="email"
-              class="rounded-md border-2 border-verde-800 bg-verde-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900"
+              class="input"
               type="email"
             />
           </div>
@@ -515,7 +534,7 @@
             <input
               id="telefone"
               name="telefone"
-              class="rounded-md border-2 border-verde-800 bg-verde-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900"
+              class="input"
               placeholder="(21) 00000-0000"
               type="text"
             />
@@ -527,12 +546,12 @@
             id="mensagem"
             name="mensagem"
             rows="5"
-            class="rounded-md border-2 border-verde-800 bg-verde-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-verde-400 focus:border-verde-900 placeholder:text-verde-900 resize-none"
+            class="input resize-none"
             type="text"
           ></textarea>
         </div>
         <button
-          class="place-self-start bg-verde-400 text-verde-900 py-2 px-4 inline-block rounded-full"
+          class="place-self-start btn"
         >
           Enviar E-mail
         </button>
@@ -543,7 +562,7 @@
     <section class="container mb-12 sm:mb-16">
       <!-- *:*: o filho direto da ul e o filho direto da li que é a img -->
       <ul
-        class="*:*:max-h-8 flex flex-col sm:flex-row sm:gap-8 sm:border-y-2 sm:border-verde-900 items-center py-4 sm:py-8 max-sm:divide-y-2 divide-verde-900 *:p-4"
+        class="*:*:max-h-8 flex flex-col sm:flex-row justify-center sm:gap-8 sm:border-y-2 sm:border-verde-900 items-center py-4 sm:py-8 max-sm:divide-y-2 divide-verde-900 *:p-4"
       >
         <li><img src="./img/parceiros/caravan.svg" alt="Caravan" /></li>
         <li><img src="./img/parceiros/dogs.svg" alt="Dogs" /></li>
@@ -594,6 +613,31 @@
       </div>
     </footer>
     <script>
+      // video
+      const video = document.getElementById('video');
+      const temperatura = document.getElementById('temperatura');
+      const tempo = document.getElementById('tempo');
+      const dia = document.getElementById('dia');
+
+      // pegando um numero aleatorio entre 19 e 29 de temperatura, Math.floor arredonda para baixo, Math.random valora randomico entre 0 e 1, pega o valor do math 0 ou 1 arredonda para baixo tipo 0,2, multiplica por 10 q da 2 e soma mais 20 que da 22 graus, e assim faz aleatoriamente toda vez
+      const random = Math.floor(Math.random() * 10) + 20;
+      // temperatura é alterado o valor de innerText para o valor de random com tamplate string `` e o valor ${variavel}
+      temperatura.innerText = `${random}°`;
+      // agora tempo, se random for menor que 25 chuva se n sol ${random + 5} seria para da um % de chuva aleatoria
+      tempo.innerText = random < 25 ? `🌧️ ${random + 5}%` : `☀️`;
+
+      // pega a data de hoje
+      const date = new Date();
+      // dia recebe a data de hoje com o local brasil, o objeto weekday pega o dia certinho da semana e dropa, o replace tia o feita e deixa nada
+      dia.innerText = date
+        .toLocaleDateString('pt-BR', {
+          weekday: 'long',
+        })
+        .replace('-feira', '');
+
+      video.src = random < 25 ? `./img/video_chuva.mp4` : `./img/video_sol.mp4`;
+
+      // menu h
       const mobileButton = document.getElementById('mobile-button');
       const mobileMenu = document.getElementById('mobile-menu');
 
@@ -606,7 +650,6 @@
         mobileMenu.classList.add('hidden');
         mobileMenu.classList.remove('flex');
       });
-
     </script>
   </body>
 </html>

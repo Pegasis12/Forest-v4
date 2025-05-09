@@ -12,8 +12,12 @@ module.exports = {
         sm: "1rem",
       },
     },
-    
     extend: {
+      fontFamily: {
+        sans:['DM Sans', 'system-ui', 'sans-serif'],
+        serif:['DM Serif Text', 'Georgia', 'serif']
+      },
+      
       // keyframe menu
       keyframes:{
         // dei um nome pra animacao
